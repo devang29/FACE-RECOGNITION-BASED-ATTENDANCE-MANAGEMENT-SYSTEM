@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="faculty_sub_name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19ab7b23-e79b-4b89-b3d3-5d0948545aa2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="SUBJECT" uuid="a1e3a3ad-c6cb-4460-ae53-582a8d322d58">
+		<queryString>
+			<![CDATA[SELECT
+     dummy_a.`stu_id` AS stu_id,
+     dummy_a.`name` AS name,
+     dummy_a.`percentage` AS percentage
+FROM
+     `dummy_a` dummy_a]]>
+		</queryString>
+		<field name="stu_id" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="percentage" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="dept_name" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="semester" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="division" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="subject" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="faculty" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="s_date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="e_date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<field name="stu_id" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="percentage" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="dcb29092-5c36-4f03-9917-62f6441111b1" x="0" y="0" width="555" height="79"/>
+				<textElement>
+					<font size="34"/>
+				</textElement>
+				<text><![CDATA[                  BITS edu campus]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c3fae2ea-e251-4f9c-9470-41358817aaea" x="0" y="0" width="100" height="21"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTMENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d02c08dd-86a7-46cd-ab7a-93065be189fb" x="227" y="0" width="100" height="21"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEMESTER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="34e7100c-29c1-4b94-8eb4-a269744d85eb" x="392" y="0" width="100" height="21"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIVISION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="79c0daf2-39d0-4b38-b0b7-21b27d2fd07a" x="0" y="32" width="80" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBJECT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="663935df-5e88-4192-bdff-59fabfa8b9d5" x="312" y="32" width="80" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FACULTY ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37ca97c6-e9a0-4a10-8ea4-7e5efe7997b9" x="0" y="63" width="100" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[START DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8dff7c69-83ae-4539-bf15-fe54a9036048" x="243" y="63" width="100" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[END DATE]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5f2e5ba5-67d5-4456-9cc3-cb361787acca" x="100" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{dept_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="16e124f3-5a00-4949-862d-30dd8b6681f2" x="327" y="1" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{semester}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d15492c6-d4a0-48a2-b1a1-ee9b3315a190" x="492" y="0" width="63" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{division}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="650fafa1-5d6a-4beb-a265-8a41e33ffbef" x="80" y="32" width="232" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{subject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="33930421-f53f-4598-936d-b28e1a9bf3f1" x="392" y="32" width="163" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{faculty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4386e484-8e1c-4243-8bd4-ff2bf9051703" x="100" y="63" width="143" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{s_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f937350f-9934-4854-8d1d-573b9bbf0b0b" x="343" y="63" width="212" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{e_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="200" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="29a65756-2203-4816-8086-8281bb01f310" key="table" style="table" x="0" y="0" width="555" height="200"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="SUBJECT" uuid="bd573dff-849d-4917-b0b8-2ea6e9bd7976">
+						<dataSourceExpression><![CDATA[$P{REPORT_DATA_SOURCE}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="1f331eb5-27fa-4491-a634-40226ef7764e">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="0fdd7e01-0b5f-4ca0-80a0-57345cc795e4" x="0" y="0" width="100" height="30"/>
+								<textElement>
+									<font size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[         ID]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement uuid="454a990d-8957-42e6-9ce4-9ba8df61fbab" x="0" y="0" width="100" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{stu_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="350" uuid="b10e8e73-7f95-4628-aabb-8d021049b286">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="fb5fc30a-d082-4540-b787-f6a40a43c1f6" x="0" y="0" width="350" height="30"/>
+								<textElement>
+									<font size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[                                     NAME]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement uuid="6b48a431-d641-4df4-a0fd-2d5cdc32a143" x="0" y="0" width="350" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="39a0c20c-c30d-424a-afb3-285cda6986e5">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="d32b4709-05a8-43ed-b136-f3c73ba0a276" x="0" y="0" width="100" height="30"/>
+								<textElement>
+									<font size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ATTENDENCE]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement uuid="d46d1a26-e5fc-48ff-8755-a7c770b0a6ec" x="0" y="0" width="100" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{percentage}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

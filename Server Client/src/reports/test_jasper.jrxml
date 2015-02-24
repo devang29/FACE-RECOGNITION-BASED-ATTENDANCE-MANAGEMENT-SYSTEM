@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="scriptlet" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" whenResourceMissingType="Empty" uuid="cf57029a-4cb4-4b3b-87e1-64f623068daf">
+	<property name="com.jasperassistant.designer.Grid" value="false"/>
+	<property name="com.jasperassistant.designer.SnapToGrid" value="false"/>
+	<property name="com.jasperassistant.designer.GridWidth" value="12"/>
+	<property name="com.jasperassistant.designer.GridHeight" value="12"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="subject" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="division" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="semester" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dept_name" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="s_date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="faculty" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="e_date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="stu_id" class="java.lang.String">
+		<fieldDescription><![CDATA[stu_id]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="percentage" class="java.lang.String">
+		<fieldDescription><![CDATA[percentage]]></fieldDescription>
+	</field>
+	<group name="dummy">
+		<groupExpression><![CDATA["dummy"]]></groupExpression>
+		<groupHeader>
+			<band height="28">
+				<staticText>
+					<reportElement uuid="bbbc4cba-dbae-4309-a65c-b7f36f56833f" mode="Opaque" x="67" y="0" width="414" height="28" backcolor="#70A9A9"/>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f3a39fc4-9546-4051-9a9a-1c3c2d4bbf6b" x="203" y="0" width="142" height="28"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="15" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="46393f7d-2748-49b9-ad43-4d903a23f003" x="345" y="0" width="136" height="28"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="15" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Percentage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f827b170-eb8e-447c-9d71-3ed2675eaba4" x="68" y="0" width="135" height="28"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="15" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Student_ID]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<title>
+		<band height="74">
+			<staticText>
+				<reportElement uuid="9e59daad-94ca-4a0b-bd48-f6f841340a27" x="93" y="0" width="370" height="50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="24" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[BITs edu Campus]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="24a16e48-129d-43b9-a566-f1913b914998" x="35" y="47" width="84" height="21"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTMENT :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="cafe8fe9-d442-4adf-8276-cf175ee425be" x="111" y="47" width="220" height="21"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{dept_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ae8fd1a9-d6cb-4150-bc59-b787a7fd4a3e" x="335" y="47" width="66" height="21"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEMESTER :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="097aefc3-9773-4d2c-a28a-0d1469994155" x="399" y="48" width="21" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{semester}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0945d211-4944-40a9-a44b-dbc26aef323e" x="426" y="47" width="52" height="21"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIVISION :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8cef5e8c-4f2d-4627-9f60-14a62be64f3d" x="478" y="47" width="36" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{division}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="104">
+			<staticText>
+				<reportElement uuid="124da2a4-8ee5-4375-a30b-a030fd1955ba" x="35" y="39" width="58" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBJECT :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4a9209aa-b2b8-4ea1-822b-7d882c2aebd3" x="35" y="8" width="58" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FACULTY :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1b44a587-ca1b-4b2d-a9dd-698df318701f" x="35" y="79" width="72" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[START DATE :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="23f9c1b6-7a40-4701-865d-9b1249cea4ae" x="191" y="79" width="63" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[END DATE :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2f2af8cb-8278-4c57-a1e6-cf0170fc9a0e" x="93" y="39" width="238" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{subject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1960b0f6-3bb4-4641-98a9-389691b53a63" x="93" y="8" width="238" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{faculty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4aae4eb8-81e7-4569-a642-1d7b0ab2570b" x="107" y="79" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{s_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8d45aa35-3b7c-4505-a74a-65b363315a15" x="262" y="79" width="164" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{e_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="16">
+			<staticText>
+				<reportElement uuid="96323732-a15e-4228-93d2-3cdf56708dd7" mode="Opaque" x="68" y="2" width="414" height="14" backcolor="#E5ECF9"/>
+				<box>
+					<bottomPen lineWidth="0.25" lineColor="#CCCCCC"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="35d4468a-2e0b-460a-9a6e-d9773af70de8" x="68" y="0" width="135" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{stu_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5820ba39-a3b7-4f26-af88-43b5bbd86159" x="203" y="0" width="142" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dd0a80da-1b2d-4ec8-a82b-1498106c9de0" x="345" y="1" width="136" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{percentage}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="timetable" columnCount="6" pageWidth="962" pageHeight="841" orientation="Landscape" columnWidth="153" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="2267a94a-1f10-453d-8c73-56010ad12ab4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#C3D9D9">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#E6FFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="d0451d87-3b41-44b4-87fa-af4dd8143ef1"/>
+	<parameter name="dept" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="div" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sem" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dept_name" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     schedule.`day` AS schedule_day,
+     schedule.`class_no` AS schedule_class_no,
+     schedule.`faculty_id` AS schedule_faculty_id,
+     schedule.`period_no` AS schedule_period_no,
+     subject.`sub_name` AS subject_sub_name,
+     user.`f_name` AS user_f_name,
+     user.`l_name` AS user_l_name
+FROM
+     `subject` subject INNER JOIN `schedule` schedule ON subject.`sub_id` = schedule.`sub_id` and schedule.`dept_id`= $P{dept} and schedule.`semester`= $P{sem} and schedule.`division`=$P{div}
+     INNER JOIN `faculty` faculty ON schedule.`faculty_id` = faculty.`faculty_id`
+     INNER JOIN `user` user ON faculty.`faculty_id` = user.`user_id` ORDER BY schedule.day_id,schedule.period_no]]>
+	</queryString>
+	<field name="schedule_day" class="java.lang.String"/>
+	<field name="schedule_class_no" class="java.lang.Integer"/>
+	<field name="schedule_faculty_id" class="java.lang.String"/>
+	<field name="schedule_period_no" class="java.lang.Integer"/>
+	<field name="subject_sub_name" class="java.lang.String"/>
+	<field name="user_f_name" class="java.lang.String"/>
+	<field name="user_l_name" class="java.lang.String"/>
+	<group name="schedule_day">
+		<groupExpression><![CDATA[$F{schedule_day}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="feaa9a97-fc56-4008-8f7e-0704828f5054" x="0" y="-3" width="922" height="47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Time-Table]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b54824c6-b4c2-4495-b243-bbfad50c16d6" x="0" y="44" width="922" height="38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BITs edu Campus]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6f14938c-8c32-4cce-9fe1-630a127424ac" x="138" y="1" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Department :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d1b17cc6-fb7c-42d2-ade4-3dee7061c271" stretchType="RelativeToBandHeight" x="204" y="1" width="218" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{dept_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e8631a85-f8dc-40fb-a8ce-656623b7183e" x="436" y="1" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Semester :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="db3fd33f-722a-43c7-97e5-a2a24193de49" x="490" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{sem}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fc6283c2-9298-4503-8db0-7b138a47d4bb" x="604" y="1" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Division :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c655f971-b546-4479-943d-591568c787f3" x="650" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{div}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement uuid="520cfef3-e9be-4196-882a-2c56d71ebcca" x="12" y="25" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{schedule_day}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="68205302-1ce1-4c20-bbcb-d455df54a5e3" x="0" y="10" width="148" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="0b4c0e3b-474f-4732-88da-b5cd29dbf9da" x="0" y="53" width="148" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="98" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a0fba459-e3ed-42d5-9bdc-bd58bd6eb8ea" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="4" y="5" width="134" height="34" isRemoveLineWhenBlank="true" printWhenGroupChanges="schedule_day"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{subject_sub_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d34d4b61-606e-4ec0-b979-907623cdf3db" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="19" y="39" width="37" height="20" isRemoveLineWhenBlank="true" printWhenGroupChanges="schedule_day"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{user_f_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dd87e78d-7c51-4d87-b3c9-bd346d16e067" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="56" y="39" width="56" height="20" isRemoveLineWhenBlank="true" printWhenGroupChanges="schedule_day"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{user_l_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="51248d89-c89a-44f3-8aee-dc3eada144bd" x="46" y="59" width="16" height="20" isRemoveLineWhenBlank="true" printWhenGroupChanges="schedule_day"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{schedule_class_no}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="8ab826b0-7317-4555-9604-c266cceac553" x="0" y="89" width="148" height="1"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement uuid="66a4e71b-c467-4406-8094-a19c976a2a01" x="148" y="-50" width="1" height="139"/>
+			</line>
+			<textField>
+				<reportElement uuid="9302b841-2a78-4732-aa63-e31a7ec079ed" isPrintRepeatedValues="false" x="121" y="62" width="22" height="20" isRemoveLineWhenBlank="true" printWhenGroupChanges="schedule_day"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{schedule_period_no}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
